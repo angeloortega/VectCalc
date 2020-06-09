@@ -1,0 +1,7 @@
+{
+  "name": "VectCalc",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
