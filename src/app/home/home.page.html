@@ -1,20 +1,94 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<!--
+  suma,
+  resta, 
+  producto Cruz
+  punto 
+  al menos 3 variables-->
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Vector Calculator</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  
+  <div id="container" class="padded">
+    <div class="calc-display">
+      <div class="outer-div">
+        <div class="inner-div">     
+          <p style="white-space: nowrap; overflow: hidden;">{{display}}</p>
+        </div>
+      </div>
+    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="7">
+          <ion-row>
+            <ion-col class="top-row">
+              <ion-button shape="round" color="light"(click)="click(';')">;</ion-button>
+              <ion-button shape="round" color="light"(click)="click('[')">[</ion-button>
+              <ion-button shape="round" color="light"(click)="click(']')">]</ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button shape="round" color="dark"(click)="click('7')">7</ion-button>
+              <ion-button shape="round" color="dark"(click)="click('8')">8</ion-button>
+              <ion-button shape="round" color="dark"(click)="click('9')">9</ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button shape="round" color="dark"(click)="click('4')">4</ion-button>
+              <ion-button shape="round" color="dark"(click)="click('5')">5</ion-button>
+              <ion-button shape="round" color="dark"(click)="click('6')">6</ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button shape="round" color="dark" (click)="click('1')">1</ion-button>
+              <ion-button shape="round" color="dark" (click)="click('2')">2</ion-button>
+              <ion-button shape="round" color="dark" (click)="click('3')">3</ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button shape="round" color="dark" class="double-width space-btn" (click)="click('0')">0</ion-button>
+              <ion-button shape="round" color="dark" (click)="click('.')">.</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col size="5">
+          <ion-row>
+            <ion-col>
+              <ion-button shape="round" (click)="click('(')">(</ion-button>
+              <ion-button shape="round" (click)="click(')')">)</ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button shape="round" color="warning" (click)="click('•')">•</ion-button>
+              <ion-button shape="round" color="warning" (click)="click('x')">x</ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button shape="round" color="warning" (click)="click('+')">+</ion-button>
+              <ion-button shape="round" color="warning" (click)="click('-')">-</ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button shape="round" color="danger" (click)="click('ac')">AC</ion-button>
+              <ion-button shape="round" color="danger" (click)="click('🡄')">DEL</ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button shape="round" color="warning" class="double-width" (click)="click('=')">=</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 </ion-content>
